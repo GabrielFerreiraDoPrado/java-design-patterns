@@ -1,5 +1,6 @@
 package one.digitalinnovation.gof;
 
+import one.digitalinnovation.gof.facade.Facade;
 import one.digitalinnovation.gof.singleton.EagerSingleton;
 import one.digitalinnovation.gof.singleton.LazySingleton;
 import one.digitalinnovation.gof.singleton.LazySingletonHolder;
@@ -18,12 +19,10 @@ public class Test {
 		LazySingleton lazy = LazySingleton.getInstancia();
 		LazySingleton lazy2 = LazySingleton.getInstancia();
 		System.out.println(lazy == lazy2);
-		System.out.println();
 		
 		EagerSingleton eager = EagerSingleton.getInstancia();
 		EagerSingleton eager2 = EagerSingleton.getInstancia();
 		System.out.println(eager == eager2);
-		System.out.println();
 		
 		LazySingletonHolder holder = LazySingletonHolder.getInstancia();
 		LazySingletonHolder holder2 = LazySingletonHolder.getInstancia();
@@ -43,6 +42,12 @@ public class Test {
 		robot.move();
 		robot.setBehavior(aggressive);
 		robot.move();
+		System.out.println();
+		
+		//Facade:
+		
+		Facade facade = new Facade();
+		facade.migrateClient("John", "12345678");
 		
 	}
 
